@@ -8,11 +8,13 @@ sub detect {
 }
 
 sub configuration {
+    my $branch = $ENV{GITHUB_REF};
+    $branch =~ s{^refs/heads/}{};
     return {
         service      => 'github-actions',
         commit       => $ENV{GITHUB_SHA},
         build        => $ENV{GITHUB_RUN_NUMBER},
-        branch       => $ENV{GITHUB_REF},
+        branch       => $branch,
         job          => $ENV{GITHUB_RUN_ID},
 #        pull_request => $ENV{},
         slug         => $ENV{GITHUB_REPOSITORY},

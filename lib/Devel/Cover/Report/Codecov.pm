@@ -28,6 +28,10 @@ sub report {
     my $url   = get_request_url($API_ENDPOINT, $query);
     my $json  = get_codecov_json($options->{file}, $db);
     my $res   = send_report($url, $json);
+    use Data::Dumper;
+    local $Data::Dumper::Sortkeys = 1;
+    warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([$url], ['url']);
+    warn __PACKAGE__.':'.__LINE__.$".Data::Dumper->Dump([$res], ['res']);
 
     if ($res->{ok}) {
         print $res->{message} . "\n";
