@@ -25,7 +25,7 @@ subtest basic => sub {
             job          => 'job_id',
             pull_request => 'false',
             slug         => 'repo_slug',
-            tag          => 'branch',
+            tag          => '',
         };
 };
 
