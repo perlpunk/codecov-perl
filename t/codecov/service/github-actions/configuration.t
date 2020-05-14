@@ -8,7 +8,7 @@ use Devel::Cover::Report::Codecov::Service::GithubActions;
 
 subtest basic => sub {
     local $ENV{GITHUB_SHA}        = 'commit';
-    local $ENV{GITHUB_RUN_NUMBER} = 'job_number';
+#    local $ENV{GITHUB_RUN_NUMBER} = 'job_number';
     local $ENV{GITHUB_REF}        = 'branch';
     local $ENV{GITHUB_RUN_ID}     = 'job_id';
     local $ENV{GITHUB_REPOSITORY} = 'repo_slug';
@@ -20,7 +20,8 @@ subtest basic => sub {
         {
             service      => 'github-actions',
             commit       => 'commit',
-            build        => 'job_number',
+#            build        => 'job_number',
+            build        => 'job_id',
             branch       => 'branch',
             job          => 'job_id',
             pull_request => 'false',

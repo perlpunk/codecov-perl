@@ -13,7 +13,8 @@ sub configuration {
     return {
         service      => 'github-actions',
         commit       => $ENV{GITHUB_SHA},
-        build        => $ENV{GITHUB_RUN_NUMBER},
+#        build        => $ENV{GITHUB_RUN_NUMBER},
+        build        => $ENV{GITHUB_RUN_ID},
         branch       => $branch,
         job          => $ENV{GITHUB_RUN_ID},
         pull_request => 'false', # TODO
