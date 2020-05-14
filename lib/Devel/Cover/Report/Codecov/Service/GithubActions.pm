@@ -16,7 +16,7 @@ sub configuration {
         build        => $ENV{GITHUB_RUN_NUMBER},
         branch       => $branch,
         job          => $ENV{GITHUB_RUN_ID},
-#        pull_request => $ENV{},
+        pull_request => 'false', # TODO
         slug         => $ENV{GITHUB_REPOSITORY},
         tag          => $ENV{GITHUB_REF},
     };

@@ -12,7 +12,7 @@ subtest basic => sub {
     local $ENV{GITHUB_REF}        = 'branch';
     local $ENV{GITHUB_RUN_ID}     = 'job_id';
     local $ENV{GITHUB_REPOSITORY} = 'repo_slug';
-#    local $ENV{} = 'pull_request';
+    #local $ENV{}                  = 'pull_request';
 
     my $configuration = Devel::Cover::Report::Codecov::Service::GithubActions->configuration;
     cmp_deeply
@@ -23,7 +23,7 @@ subtest basic => sub {
             build        => 'job_number',
             branch       => 'branch',
             job          => 'job_id',
-#            pull_request => 'pull_request',
+            pull_request => 'false',
             slug         => 'repo_slug',
             tag          => 'branch',
         };
